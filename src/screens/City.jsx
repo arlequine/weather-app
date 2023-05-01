@@ -4,12 +4,13 @@ import IconText from '../components/IconText'
 import moment from 'moment'
 
 const City = () => {
+
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={require('../../assets/city-background.jpg')} style={styles.imageLayout}>
         <Text style={[styles.cityName, styles.cityText]}>London</Text>
         <Text style={[styles.countryName, styles.cityText]}>UK</Text>
-        <View style={styles.populationWrapper}>
+        <View style={[styles.populationWrapper, styles.rowLayout]}>
           <IconText
             iconName={'user'}
             iconColor={'red'}
@@ -17,7 +18,7 @@ const City = () => {
             bodyTextStyles={styles.populationText}
           />
         </View>
-        <View style={styles.riseSetWrapper}>
+        <View style={[styles.riseSetWrapper, styles.rowLayout]}>
           <IconText
             iconName={'sunrise'}
             iconColor={'white'}
@@ -55,8 +56,6 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   populationWrapper: {
-    flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'center',
     marginTop: 30
   },
@@ -76,6 +75,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'white',
     fontWeight: 'bold'
+  },
+  rowLayout: {
+    flexDirection: 'row',
+    alignItems: 'center'
   }
 })
 
